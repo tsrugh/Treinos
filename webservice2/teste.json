@@ -1,0 +1,27 @@
+{
+    "Treino A": [
+        {
+            "Ombros": [
+
+                  {
+                    "desc": "Elev. Lateral isometria",
+                    "ser": "4",
+                    "rept": "9",
+                    "maq": "NA"
+                  },
+                  {
+                    "desc": "Elev. Frontal",
+                    "ser": "4",
+                    "rept": "10",
+                    "maq": "NA"
+                  },
+                  {
+                    "desc": "Remada Alta",
+                    "ser": "4",
+                    "rept": "10",
+                    "maq": "NA"
+                  }
+            ]
+        }
+    ]
+}
