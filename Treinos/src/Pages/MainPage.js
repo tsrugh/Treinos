@@ -21,32 +21,26 @@ class MainPage extends React.Component{
         .then(resposta => {
             this.setState({nomeTreinos: resposta.data});
         });
-
+{
         // axios
         // .get('http://192.168.1.146/webservice2/index.php/teste/Treino A')
         // .then(resposta =>{
         //     this.setState({exercicios: resposta.data});
         // });
-
+}
         axios
         .get('http://localhost/webservice2/index.php/todos')
         .then(resposta =>{
-            this.setState({exercicios: resposta.data});
+            const vet = [];
+            for(exr in resposta.data){
+                vet.push(resposta.data[exr])
+            }
+            this.setState({exercicios: vet});
         });
         
     }
 
-    getExercises(treino){
 
-        axios
-        .get(`http://192.168.1.146/webservice2/index.php/teste/${treino}`)
-        .then(resposta =>{
-            this.setState({exercicios: resposta.data});
-            return resposta.data;
-        });
-
-
-    }
 
 
 
@@ -83,9 +77,7 @@ class MainPage extends React.Component{
                     treinos={this.state.nomeTreinos} 
                     
                     clicar={
-                    (treinos, nomeTreino) =>{
-                        //console.log(nomeTreino);
-                        this.getExercises(nomeTreino);
+                    (treinos) =>{
                         this.props.navigation.navigate('Second', treinos);
                     }
                 }/>

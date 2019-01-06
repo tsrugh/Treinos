@@ -14,7 +14,7 @@ const Button = props => {
     
 
     return(
-        <TouchableOpacity onPress={() => {evento({obj}, 'Treino A')}} style={[styles.container, {backgroundColor:props.cor}]}>
+        <TouchableOpacity onPress={() => {evento({obj})}} style={[styles.container, {backgroundColor:props.cor}, props.first ? {marginTop: 0} : null]}>
             <Text style={styles.texto}>{props.nome}</Text>
         </TouchableOpacity>
     )

@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import ListTitle from  '../Components/ListTitle';
 import TitleMenu from '../Components/TitleMenu';
+import { ForceTouchGestureHandler } from 'react-native-gesture-handler';
 
 class TrainingPage extends React.Component{
 
@@ -9,17 +10,9 @@ class TrainingPage extends React.Component{
     findGroups(){
 
         const nomes = this.props.navigation.state.params.obj.ex;
-        console.log(nomes);
-        const gr = [];
-        //console.log(nomes);
+        const chaves = Object.keys(nomes);
 
-        for(treino in nomes){
-            for(grupos in nomes[treino]){
-                gr.push(grupos);
-            }
-        }
-        //console.log(gr);
-        return gr;
+        return chaves ;
 
     }
 
@@ -27,26 +20,19 @@ class TrainingPage extends React.Component{
     findExercixes(){
 
         const treinos = this.props.navigation.state.params.obj.ex;
-        const exercicios = []
-        console.log(treinos);
-        
-        for(treino in treinos){
-            for(grupos in treinos[treino]){
-                //console.log(treinos[treino][grupos])
-                exercicios.push(treinos[treino][grupos]);
-            }
+
+        const exercicios = [];
+
+
+        for(tr in treinos){
+            exercicios.push(treinos[tr]);
         }
-        
-        //console.log(exercicios);
-        return exercicios;
+
+        return exercicios
 
     }
 
     render(){
-
-        this.findExercixes();
-        this.findGroups();
-
 
         let cor = this.props.navigation.state.params.obj.cor;
         
