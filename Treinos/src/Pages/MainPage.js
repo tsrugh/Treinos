@@ -3,15 +3,12 @@ import {View, Text, ScrollView} from 'react-native';
 import axios from 'axios';
 import ButtonList from '../Components/ButtonList';
 
-
-
 class MainPage extends React.Component{
 
     //fazer a chamada da API para gerar os botoes
      componentDidMount(){
 
         this.inicializar();
-
 
     }
 
@@ -21,13 +18,7 @@ class MainPage extends React.Component{
         .then(resposta => {
             this.setState({nomeTreinos: resposta.data});
         });
-{
-        // axios
-        // .get('http://192.168.1.146/webservice2/index.php/teste/Treino A')
-        // .then(resposta =>{
-        //     this.setState({exercicios: resposta.data});
-        // });
-}
+
         axios
         .get('http://localhost/webservice2/index.php/todos')
         .then(resposta =>{
@@ -39,10 +30,6 @@ class MainPage extends React.Component{
         });
         
     }
-
-
-
-
 
     transformarResposta(){
 
