@@ -1,8 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
+// Elemento responsavel por montar cada exercicio
 const Exercise = props =>{
 
+    // Desestruturando todos os itens para passar como valor aos elementos Text
     const {desc, series, rep, maq} = props;
 
     return(
@@ -18,12 +20,11 @@ const Exercise = props =>{
 
 export default Exercise;
 
-
+// Estilos
 const styles = StyleSheet.create({
 
     container:{
         alignItems: 'center',
-        //flex: 4,
         justifyContent: 'center',
         alignContent: 'center',
         flexDirection: 'row',
